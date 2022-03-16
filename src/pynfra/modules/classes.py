@@ -67,5 +67,5 @@ class RecipeBase(metaclass=abc.ABCMeta):
             f.write(contents)
 
     @abc.abstractmethod
-    def main(self):
+    def main(self, *args, **kwargs):
         pass

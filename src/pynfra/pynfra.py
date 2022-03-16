@@ -506,7 +506,7 @@ class Pynfra:
         parser_shell_exec.set_defaults(func='shell')
 
         parser_recipe = subparsers.add_parser('recipe', help='specify recipe to load')
-        parser_recipe.add_argument('recipe', type=str)
+        parser_recipe.add_argument('recipename', type=str)
         parser_recipe.add_argument('hostname', type=str)
         parser_recipe.set_defaults(func='recipe')
 
@@ -544,7 +544,7 @@ class Pynfra:
         elif func == "run-all":
             self.exec(None, self.__args.cmd)
         elif func == "recipe":
-            self.recipe(self.__args.recipe, self.__args.hostname, self.__unknownargs)
+            self.recipe(self.__args.recipename, self.__args.hostname, self.__unknownargs)
         else:
             self.__parser.print_help()
 
